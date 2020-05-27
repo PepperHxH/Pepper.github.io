@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>笔记</title>
+      <link href="/2020/05/26/%E7%AC%94%E8%AE%B0/"/>
+      <url>/2020/05/26/%E7%AC%94%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<p>React+React Hooks+Antd+Umi+Dva</p><p>Redux+react-router+react-redux</p><ol><li><p>！！用作类型判断，当变量为null、undefined和空串时取false</p></li><li><p>@Form.create()  //Create表单，经Form.create()包装过的组件会自带this.props.form属性</p></li><li><p>onchange 是input中的文本修改后然后离开这个input焦点后触发。<br>onblur 是 离开这个input后 直接触发。</p></li><li><p>test() 方法用于检测一个字符串是否匹配某个模式.</p><p>RegExpObject.test(string)</p></li><li><p>函数柯里化</p></li><li><p>Antd Form表单属性：validateFields 触发表单验证</p></li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Webpack脚手架搭建</title>
       <link href="/2019/12/20/Webpack%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/"/>
       <url>/2019/12/20/Webpack%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/</url>

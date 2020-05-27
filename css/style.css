@@ -19,7 +19,8 @@
 body {
     position: relative;
     padding-top: 40px;
-    padding-bottom: 70px
+    padding-bottom: 70px;
+    background-color: #000084;
 }
 
 .content {
@@ -138,8 +139,8 @@ li i {
 }
 
 .tag_box a.active {
-    background: #57a957;
-    border: 1px solid #4c964d;
+    background: #fefe54;
+    border: 1px solid #fefe54;
     color: #FFF
 }
 
@@ -185,7 +186,7 @@ em.search-keyword {
 }
 
 a {
-    color: #2bbc8a
+    color: #fefe54
 }
 
 a:focus {
@@ -194,8 +195,8 @@ a:focus {
 }
 
 a:hover {
-    color: #000000;
-    background: rgb(153, 153, 153)
+    color: #fefe54;
+    background: #a50
 }
 
 a:active {
