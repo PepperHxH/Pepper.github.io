@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>HTML5新特性 | 一只胡椒灰</title>
+  <meta name="author" content="PepperHxH">
+  
+  <meta name="description" content="HEML5音频
+control属性供添加播放、暂停和音量控件
+标签： 定义声音、 规定多媒体资源，可以是多个示例：第一种方法：1&amp;lt;audio src&amp;#x3D;&amp;quot;raw&amp;#x2F;3.mp4&amp;quot; controls&amp;#x3D;&amp;quot;controls&amp;quot;&amp;gt;浏览器不支持&amp;lt;&amp;#x2F;audio&amp;gt;
+第二种方法：1234&amp;lt;audio controls&amp;#x3D;&amp;quot;controls&amp;quot;&amp;gt;	&amp;lt;source src&amp;#x3D;&amp;quot;raw&amp;#x2F;3.mp4&amp;quot;&amp;gt;	&amp;lt;source src&amp;#x3D;&amp;quot;raw&amp;#x2F;3.ogg&amp;quot;&amp;gt;&amp;lt;&amp;#x2F;audio&amp;gt;
+
+
+
+HTML视频123&amp;lt;video controls&amp;#x3D;&amp;quot;controls&amp;quot; height&amp;#x3D;&amp;quot;300px&amp;quot; width&amp;#x3D;&amp;quot;300px&amp;quot;&amp;gt;	&amp;lt;source src&amp;#x3D;&amp;quot;raw&amp;#x2F;3.mp4&amp;quot;&amp;gt;&amp;lt;&amp;#x2F;video&amp;gt;
+
+HTML拖放
+设置元素为可拖放：draggable=”true”
+拖放什么：ondragstart和setData()
+放到何处：ondragover
+进行放置：ondrop
+
+HTML画布canvas
+HTML SVG"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="HTML5新特性"/>
+  <meta property="og:site_name" content="一只胡椒灰"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">一只胡椒灰</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> HTML5新特性</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <hr>
+<h3 id="HEML5音频"><a href="#HEML5音频" class="headerlink" title="HEML5音频"></a>HEML5音频</h3><ul>
+<li>control属性供添加播放、暂停和音量控件</li>
+<li>标签：<audio> 定义声音、<source> 规定多媒体资源，可以是多个<br>示例：<br>第一种方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src&#x3D;&quot;raw&#x2F;3.mp4&quot; controls&#x3D;&quot;controls&quot;&gt;浏览器不支持&lt;&#x2F;audio&gt;</span><br></pre></td></tr></table></figure>
+第二种方法：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio controls&#x3D;&quot;controls&quot;&gt;</span><br><span class="line">	&lt;source src&#x3D;&quot;raw&#x2F;3.mp4&quot;&gt;</span><br><span class="line">	&lt;source src&#x3D;&quot;raw&#x2F;3.ogg&quot;&gt;</span><br><span class="line">&lt;&#x2F;audio&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="HTML视频"><a href="#HTML视频" class="headerlink" title="HTML视频"></a>HTML视频</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;video controls&#x3D;&quot;controls&quot; height&#x3D;&quot;300px&quot; width&#x3D;&quot;300px&quot;&gt;</span><br><span class="line">	&lt;source src&#x3D;&quot;raw&#x2F;3.mp4&quot;&gt;</span><br><span class="line">&lt;&#x2F;video&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HTML拖放"><a href="#HTML拖放" class="headerlink" title="HTML拖放"></a>HTML拖放</h3><ul>
+<li>设置元素为可拖放：draggable=”true”</li>
+<li>拖放什么：ondragstart和setData()</li>
+<li>放到何处：ondragover</li>
+<li>进行放置：ondrop</li>
+</ul>
+<h3 id="HTML画布"><a href="#HTML画布" class="headerlink" title="HTML画布"></a>HTML画布</h3><p>canvas</p>
+<h3 id="HTML-SVG"><a href="#HTML-SVG" class="headerlink" title="HTML SVG"></a>HTML SVG</h3><p>什么是SVG？</p>
+<ul>
+<li>SVG指可伸缩矢量图形（Scalable Vector Graphics）</li>
+<li>SVG用于定义用于网络的基于矢量的图形</li>
+<li>SVG使用XML格式定义图形</li>
+<li>SVG图像在放大或改变尺寸的情况下其图形质量不会有损失</li>
+<li>SVG是万维网联盟的标准</li>
+</ul>
+<p>SVG的优势</p>
+<ul>
+<li>SVG图像可通过文本编辑器来创建和修改</li>
+<li>SVG图像可被搜索、索引、脚本化或压缩</li>
+</ul>
+<h3 id="HTML地理定位"><a href="#HTML地理定位" class="headerlink" title="HTML地理定位"></a>HTML地理定位</h3><h3 id="HTML拖放-1"><a href="#HTML拖放-1" class="headerlink" title="HTML拖放"></a>HTML拖放</h3><h3 id="HTML画布-1"><a href="#HTML画布-1" class="headerlink" title="HTML画布"></a>HTML画布</h3>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/2019/11/30/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/" class="leancloud-visitors view" data-flag-title="HTML5新特性">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2019/12/03/JS中scrollTop()的浏览器兼容问题/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2019/11/30/CSS笔记/" type="button" class="btn btn-default ">Next<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+		<section id="comments" class="comments">
+			<style>
+			.comments{margin:30px;padding:10px;background:rgb(0, 0, 0)}
+			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
+			</style>
+			<div id="vcomment" class="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var valineConfig = {"enable":true,"appId":"xxx","appKey":"xxx","placeholder":"提交评论时留下邮箱收到回复后将自动通知","visitor":true,"avatar":"monsterid","requiredFields":["nick","mail"]}
+valineConfig.el='#vcomment';
+new Valine(valineConfig);
+    // new Valine({
+    //     el: '#vcomment',
+    //     appId: "",
+    //     appKey: "",
+    //     placeholder: "提交评论时留下邮箱收到回复后将自动通知",
+    //     avatar:"monsterid",
+    //     visitor: "true",
+    //     requiredFields: "nick,mail".split(','),
+    // });
+</script>
+
+		</section>
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-11-30 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2020 PepperHxH's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>

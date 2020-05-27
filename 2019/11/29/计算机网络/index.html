@@ -1,0 +1,306 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>计算机网络 | 一只胡椒灰</title>
+  <meta name="author" content="PepperHxH">
+  
+  <meta name="description" content="6.4 TCP
+6.4.1 TCP的特点及其目的&amp;amp;nbps&amp;amp;nbps为通过IP数据报实现可靠性传输&amp;amp;nbps&amp;amp;nbpsTCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。
+6.4.2 通过序列号（SEQ）与确认应答（ACK）提高可靠性&amp;amp;nbps&amp;amp;nbps发送端数据到达接受主机时，接收端主机会返回ACK。若收到ACK，说明数据已成功到达对端；反之，数据丢失的可能性很大。
+未收到ACK两种情况：1、图发送过程中丢包，发送端经过特定时间间隔重发数据。2、图接收端返回的ACK因网络拥堵等原因在传送途中丢失，发送端经过特定时间间隔重发数据。3、在源主机重发数据后ACK才到达。"> 
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="计算机网络"/>
+  <meta property="og:site_name" content="一只胡椒灰"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-70812759-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-70812759-1');
+</script>
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">一只胡椒灰</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> 计算机网络</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="6-4-TCP"><a href="#6-4-TCP" class="headerlink" title="6.4 TCP"></a>6.4 TCP</h1><hr>
+<h3 id="6-4-1-TCP的特点及其目的"><a href="#6-4-1-TCP的特点及其目的" class="headerlink" title="6.4.1 TCP的特点及其目的"></a>6.4.1 TCP的特点及其目的</h3><p>&amp;nbps&amp;nbps为通过IP数据报实现可靠性传输<br>&amp;nbps&amp;nbpsTCP通过检验和、序列号、确认应答、重发控制、连接管理以及窗口控制等机制实现可靠性传输。</p>
+<h3 id="6-4-2-通过序列号（SEQ）与确认应答（ACK）提高可靠性"><a href="#6-4-2-通过序列号（SEQ）与确认应答（ACK）提高可靠性" class="headerlink" title="6.4.2 通过序列号（SEQ）与确认应答（ACK）提高可靠性"></a>6.4.2 通过序列号（SEQ）与确认应答（ACK）提高可靠性</h3><p>&amp;nbps&amp;nbps发送端数据到达接受主机时，接收端主机会返回ACK。<br>若收到ACK，说明数据已成功到达对端；反之，数据丢失的可能性很大。</p>
+<h3 id="未收到ACK两种情况："><a href="#未收到ACK两种情况：" class="headerlink" title="未收到ACK两种情况："></a>未收到ACK两种情况：</h3><p>1、图<br>发送过程中丢包，发送端经过特定时间间隔重发数据。<br>2、图<br>接收端返回的ACK因网络拥堵等原因在传送途中丢失，发送端经过特定时间间隔重发数据。<br>3、在源主机重发数据后ACK才到达。</p>
+<a id="more"></a>
+<p>由于有以上情况的出现，对于目标主机来说，会反复收到相同的数据。而为了对上层应用提供可靠的传输，必须放弃重复的数据包。<br>为此引入序列号。<br>为发送数据每一个8位字节标上编号。<br>接收端查询接收数据TCP首部中序列号和数据的长度，将下一步应接受的序号作为ACK送回去。</p>
+<p>图</p>
+<h3 id="6-4-3-重发超时如何确定"><a href="#6-4-3-重发超时如何确定" class="headerlink" title="6.4.3 重发超时如何确定"></a>6.4.3 重发超时如何确定</h3><p>一般设置为6秒左右。</p>
+<h3 id="6-4-4-连接管理"><a href="#6-4-4-连接管理" class="headerlink" title="6.4.4 连接管理"></a>6.4.4 连接管理</h3><p>图</p>
+<p>TCP链接：三次握手<br>TCP断开：四次挥手</p>
+<h3 id="6-4-5-TCP以段为单位发送数据"><a href="#6-4-5-TCP以段为单位发送数据" class="headerlink" title="6.4.5 TCP以段为单位发送数据"></a>6.4.5 TCP以段为单位发送数据</h3><p>两端主机在发出建立连接请求时，会在TCP首部中写入MSS选项，告诉对方自己的接口能够适应的MSS大小。选择两者间较小值投入使用。</p>
+<p>图</p>
+<h3 id="6-4-6-利用窗口控制提高速度"><a href="#6-4-6-利用窗口控制提高速度" class="headerlink" title="6.4.6 利用窗口控制提高速度"></a>6.4.6 利用窗口控制提高速度</h3>
+	  <div class="article-footer-copyright">
+
+    本博客采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议(CC BY-NC-SA 4.0) 发布.</a>
+</div>
+
+	</div>
+
+	
+	<span id="/2019/11/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="leancloud-visitors view" data-flag-title="计算机网络">
+		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
+	</span>
+	
+	<div>
+  	<center>
+
+	<div class="pagination">
+
+    
+    
+    <a href="/2019/11/30/Hexo部署遇到的错误/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a type="button" class="btn btn-default disabled">Next<i class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	<!--
+<section id="comment">
+    <h2 class="title">Comments</h2>
+
+    
+</section>
+
+-->
+	
+		<section id="comments" class="comments">
+			<style>
+			.comments{margin:30px;padding:10px;background:rgb(0, 0, 0)}
+			@media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#000}}
+			</style>
+			<div id="vcomment" class="comment"></div>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var valineConfig = {"enable":true,"appId":"xxx","appKey":"xxx","placeholder":"提交评论时留下邮箱收到回复后将自动通知","visitor":true,"avatar":"monsterid","requiredFields":["nick","mail"]}
+valineConfig.el='#vcomment';
+new Valine(valineConfig);
+    // new Valine({
+    //     el: '#vcomment',
+    //     appId: "",
+    //     appKey: "",
+    //     placeholder: "提交评论时留下邮箱收到回复后将自动通知",
+    //     avatar:"monsterid",
+    //     visitor: "true",
+    //     requiredFields: "nick,mail".split(','),
+    // });
+</script>
+
+		</section>
+	
+	</div> <!-- col-md-9/col-md-12 -->
+
+
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2019-11-29 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+		
+
+	</div>
+	
+		
+
+</div><!-- row -->
+
+<!--
+ -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  
+  &copy; 2020 PepperHxH's Blog
+  
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a>.Theme <a href="https://github.com/Ares-X/hexo-theme-freemind.bithack" target="_blank">freemind.bithack</a>  
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+</body>
+   </html>
