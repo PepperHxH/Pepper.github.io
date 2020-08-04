@@ -149,7 +149,7 @@
   <div class="row">
 	
 	
-		<h2 id="React-Redux-制作简易TodoList"><a href="#React-Redux-制作简易TodoList" class="headerlink" title="React-Redux - 制作简易TodoList"></a>React-Redux - 制作简易TodoList</h2><blockquote>
+		<blockquote>
 <p>学习react-redux做的一个todolist demo</p>
 </blockquote>
 <h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><h4 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h4><p>React-Redux提供<code>&lt;Provider/&gt;</code>组件，能够使整个App组件访问到Redux store中的数据</p>
@@ -164,6 +164,10 @@
 <ul>
 <li><code>mapDispatchToProps</code>: Dispatching Actions with mapDispatchToProps<br>用dispath传递actions是唯一的改变state的方法<br>两种dispatch actions的方法：</li>
 </ul>
+<ol>
+<li>直接使用props.dispatch</li>
+<li>使用<code>mapDispatchToProps</code>参数，并将actions作为props传入子组件，调用到它时，会将actions dispatch到reducers处理数据</li>
+</ol>
 	
 
 	</div>
@@ -175,7 +179,7 @@
   <div class="row">
 	
 	
-		<h2 id="React-Redux-制作简易TodoList"><a href="#React-Redux-制作简易TodoList" class="headerlink" title="React-Redux - 制作简易TodoList"></a>React-Redux - 制作简易TodoList</h2><blockquote>
+		<blockquote>
 <p>学习react-redux做的一个todolist demo</p>
 </blockquote>
 <h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><h4 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h4><p>React-Redux提供<code>&lt;Provider/&gt;</code>组件，能够使整个App组件访问到Redux store中的数据</p>
@@ -190,6 +194,10 @@
 <ul>
 <li><code>mapDispatchToProps</code>: Dispatching Actions with mapDispatchToProps<br>用dispath传递actions是唯一的改变state的方法<br>两种dispatch actions的方法：</li>
 </ul>
+<ol>
+<li>直接使用props.dispatch</li>
+<li>使用<code>mapDispatchToProps</code>参数，并将actions作为props传入子组件，调用到它时，会将actions dispatch到reducers处理数据</li>
+</ol>
 	
 	</div>
   <a type="button" href="/2020/08/04/React-Redux - 制作简易TodoList/#more" class="btn btn-default more">Read More</a>

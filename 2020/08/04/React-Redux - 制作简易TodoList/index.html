@@ -9,8 +9,7 @@
   <title>React-Redux - 制作简易TodoList | 胡椒灰のBlog</title>
   <meta name="author" content="PepperHxH">
   
-  <meta name="description" content="React-Redux - 制作简易TodoList
-学习react-redux做的一个todolist demo
+  <meta name="description" content="学习react-redux做的一个todolist demo
 
 笔记ProviderReact-Redux提供&amp;lt;Provider/&amp;gt;组件，能够使整个App组件访问到Redux store中的数据
 connect把组件和store连接起来
@@ -22,7 +21,11 @@ mapStateToProps: Extracting Data with mapStateToPropsconnect的第一个参数
 接收store state数据，并返回当前组件所需数据对象
 
 
-mapDispatchToProps: Dispatching Actions with mapDispatchToProps用dispath传递actions是唯一的改变state的方法两种dispatch actions的方法："> 
+mapDispatchToProps: Dispatching Actions with mapDispatchToProps用dispath传递actions是唯一的改变state的方法两种dispatch actions的方法：
+
+
+直接使用props.dispatch
+使用mapDispatchToProps参数，并将actions作为props传入子组件，调用到它时，会将actions dispatch到reducers处理数据"> 
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -141,7 +144,7 @@ mapDispatchToProps: Dispatching Actions with mapDispatchToProps用dispath传递a
 	<div class="mypage">		
 	  		
 
-	  <h2 id="React-Redux-制作简易TodoList"><a href="#React-Redux-制作简易TodoList" class="headerlink" title="React-Redux - 制作简易TodoList"></a>React-Redux - 制作简易TodoList</h2><blockquote>
+	  <blockquote>
 <p>学习react-redux做的一个todolist demo</p>
 </blockquote>
 <h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><h4 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h4><p>React-Redux提供<code>&lt;Provider/&gt;</code>组件，能够使整个App组件访问到Redux store中的数据</p>
@@ -198,7 +201,7 @@ mapDispatchToProps: Dispatching Actions with mapDispatchToProps用dispath传递a
 </ul>
 </li>
 </ul>
-<h3 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h3><p><img src="./src/screenshots/screenshot1.jpg" alt="screenshot1"><br><img src="./src/screenshots/screenshot2.jpg" alt="screenshot1"></p>
+<h3 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h3><p><img src="../images/screenshot1.jpg" alt="screenshot1"><br><img src="../images/screenshot2.jpg" alt="screenshot1"></p>
 <h3 id="官方教程链接"><a href="#官方教程链接" class="headerlink" title="官方教程链接"></a>官方教程链接</h3><p><a href="https://react-redux.js.org/introduction/basic-tutorial" target="_blank" rel="noopener">https://react-redux.js.org/introduction/basic-tutorial</a></p>
 
 	  <div class="article-footer-copyright">
