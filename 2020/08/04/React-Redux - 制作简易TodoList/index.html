@@ -6,21 +6,28 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>Webpack脚手架搭建 | 胡椒灰のBlog</title>
+  <title>React-Redux - 制作简易TodoList | 胡椒灰のBlog</title>
   <meta name="author" content="PepperHxH">
   
-  <meta name="description" content="webpack-dev-server常用命令参数在项目的package.json文件的scripts命令中为webpack-dev-server传参
-1webpack-dev-server --open
-可在执行npm run dev后自动打开浏览器页面
-1webpack-dev-server --port 3000
-可将浏览器端口设置为3000
-1webpack-dev-server --hot
-每次保存只将更新过的代码部分打包成一个补丁  而不是重新生成一个包  且能实现页面的异步刷新"> 
+  <meta name="description" content="React-Redux - 制作简易TodoList
+学习react-redux做的一个todolist demo
+
+笔记ProviderReact-Redux提供&amp;lt;Provider/&amp;gt;组件，能够使整个App组件访问到Redux store中的数据
+connect把组件和store连接起来
+
+mapStateToProps: Extracting Data with mapStateToPropsconnect的第一个参数
+
+
+每次store state改变时都会调用它
+接收store state数据，并返回当前组件所需数据对象
+
+
+mapDispatchToProps: Dispatching Actions with mapDispatchToProps用dispath传递actions是唯一的改变state的方法两种dispatch actions的方法："> 
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Webpack脚手架搭建"/>
+  <meta property="og:title" content="React-Redux - 制作简易TodoList"/>
   <meta property="og:site_name" content="胡椒灰のBlog"/>
 
   
@@ -117,7 +124,7 @@
 
 	
 		<div class="page-header">
-			<h1> Webpack脚手架搭建</h1>
+			<h1> React-Redux - 制作简易TodoList</h1>
 		</div>
 	
 
@@ -134,13 +141,65 @@
 	<div class="mypage">		
 	  		
 
-	  <h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="webpack-dev-server常用命令参数"><a href="#webpack-dev-server常用命令参数" class="headerlink" title="webpack-dev-server常用命令参数"></a>webpack-dev-server常用命令参数</h2><p>在项目的package.json文件的scripts命令中为webpack-dev-server传参</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack-dev-server --open</span><br></pre></td></tr></table></figure>
-<p>可在执行npm run dev后自动打开浏览器页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack-dev-server --port 3000</span><br></pre></td></tr></table></figure>
-<p>可将浏览器端口设置为3000</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack-dev-server --hot</span><br></pre></td></tr></table></figure>
-<p>每次保存只将更新过的代码部分打包成一个补丁  而不是重新生成一个包  且能实现页面的异步刷新</p>
+	  <h2 id="React-Redux-制作简易TodoList"><a href="#React-Redux-制作简易TodoList" class="headerlink" title="React-Redux - 制作简易TodoList"></a>React-Redux - 制作简易TodoList</h2><blockquote>
+<p>学习react-redux做的一个todolist demo</p>
+</blockquote>
+<h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><h4 id="Provider"><a href="#Provider" class="headerlink" title="Provider"></a><code>Provider</code></h4><p>React-Redux提供<code>&lt;Provider/&gt;</code>组件，能够使整个App组件访问到Redux store中的数据</p>
+<h4 id="connect"><a href="#connect" class="headerlink" title="connect"></a><code>connect</code></h4><p>把组件和store连接起来</p>
+<ul>
+<li><code>mapStateToProps</code>: Extracting Data with mapStateToProps<br>connect的第一个参数</li>
+</ul>
+<ol>
+<li>每次store state改变时都会调用它</li>
+<li>接收store state数据，并返回当前组件所需数据对象</li>
+</ol>
+<ul>
+<li><code>mapDispatchToProps</code>: Dispatching Actions with mapDispatchToProps<br>用dispath传递actions是唯一的改变state的方法<br>两种dispatch actions的方法：</li>
+</ul>
+<ol>
+<li>直接使用props.dispatch</li>
+<li>使用<code>mapDispatchToProps</code>参数，并将actions作为props传入子组件，调用到它时，会将actions dispatch到reducers处理数据</li>
+</ol>
+<h3 id="React-UI组件"><a href="#React-UI组件" class="headerlink" title="React UI组件"></a>React UI组件</h3><ul>
+<li><code>TodoApp</code>: 应用程序的输入组件。它渲染出<code>AddTodo</code>，<code>TodoList</code>和<code>VisibilityFilters</code>组件。</li>
+<li><code>AddTodo</code>: 允许用户在点击<code>Add Todo</code>按钮后，向todo list中加入一个新的待办项。</li>
+<li><code>TodoList</code>: 渲染待办事项清单的组件。</li>
+<li><code>Todo</code>: 渲染单个待办事项的组件。</li>
+<li><code>VisibilityFilters</code>: 渲染一组简单的过滤器：<code>all</code>，<code>completed</code>和<code>incomplete</code>。</li>
+<li><code>constants</code>: 保存常量数据。<br>最后<code>index</code>将应用程序呈现给DOM。</li>
+</ul>
+<h3 id="Redux-Store"><a href="#Redux-Store" class="headerlink" title="Redux Store"></a>Redux Store</h3><ul>
+<li><code>Store</code><ul>
+<li><code>todos</code>：标准化的todos的<code>reducer</code>。包含了byIds的待办项map对象结构，和一个包含了所有待办项id的allIds数组</li>
+<li><code>visibilityFilters</code>：简单的字符串<code>all</code>, <code>completed</code>和 <code>incomplete</code>.</li>
+</ul>
+</li>
+<li><code>Action Creators</code><ul>
+<li><code>addTodo</code>：创建增添待办项的action。接收一个string变量content，返回ADD_TODO类型的action，以及一个payload对象（包含了自增的id和content属性）</li>
+<li><code>toggleTodo</code>：创建一个切换待办项的action。只接收一个number类型的变量id，返回TOGGLE_TODO类型action以及仅含id属性的payload对象。</li>
+<li><code>setFilter</code>：创建设置app当前过滤条件的action。接收一个string类型变量filter返回一个SET_FILTER类型action一集一个包含filter自身的payload对象。</li>
+</ul>
+</li>
+<li><code>Reducers</code><ul>
+<li><code>todos</code>:<ul>
+<li>在接收到ADD_TODO action时，将id追加到allIds数组，并且更新byIds</li>
+<li>在接收到TOGGLE_TODO action时，切换completed状态</li>
+</ul>
+</li>
+<li><code>VisibilityFilters</code>：在接收到SET_FILTERaction 时负责更新VISIBILITY_FILTERS状态</li>
+</ul>
+</li>
+<li><code>Action Types</code><br>  • 保存常量，以便复用</li>
+<li><code>Selectores</code><ul>
+<li><code>getTodoList</code>：从todos store中返回allIds列表</li>
+<li><code>getTodoById</code>：通过id查询store中的todo项</li>
+<li><code>getTodos</code>：接收allIds数组中的所有id，找到每一个对应的byIds中的todo，返回最终的todos数组</li>
+<li><code>getTodosByVisibilityFilter</code>：根据筛选条件过滤todos</li>
+</ul>
+</li>
+</ul>
+<h3 id="Screenshots"><a href="#Screenshots" class="headerlink" title="Screenshots"></a>Screenshots</h3><p><img src="./src/screenshots/screenshot1.jpg" alt="screenshot1"><br><img src="./src/screenshots/screenshot2.jpg" alt="screenshot1"></p>
+<h3 id="官方教程链接"><a href="#官方教程链接" class="headerlink" title="官方教程链接"></a>官方教程链接</h3><p><a href="https://react-redux.js.org/introduction/basic-tutorial" target="_blank" rel="noopener">https://react-redux.js.org/introduction/basic-tutorial</a></p>
 
 	  <div class="article-footer-copyright">
 
@@ -150,7 +209,7 @@
 	</div>
 
 	
-	<span id="/2019/12/20/Webpack%E8%84%9A%E6%89%8B%E6%9E%B6%E6%90%AD%E5%BB%BA/" class="leancloud-visitors view" data-flag-title="Webpack脚手架搭建">
+	<span id="/2020/08/04/React-Redux%20-%20%E5%88%B6%E4%BD%9C%E7%AE%80%E6%98%93TodoList/" class="leancloud-visitors view" data-flag-title="React-Redux - 制作简易TodoList">
 		<em class="post-meta-item-text"> Page View </em> <i class="leancloud-visitors-count"></i>
 	</span>
 	
@@ -161,13 +220,12 @@
 
     
     
-    <a href="/2020/08/04/React-Redux - 制作简易TodoList/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> Prev</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a href="/2019/12/09/JavaScript中的数组拷贝/" type="button" class="btn btn-default ">Next<i
+    <a href="/2019/12/20/Webpack脚手架搭建/" type="button" class="btn btn-default ">Next<i
                 class="fa fa-arrow-circle-o-right"></i></a>
     
 
@@ -224,7 +282,7 @@ new Valine(valineConfig);
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2019-12-20 
+	2020-08-04 
 	</div>
 	
 
